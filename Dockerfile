@@ -1,5 +1,6 @@
 FROM golang:1.15.7
-ENV TERRAFORM_VERSION=0.11.14
+ARG DEFAULT_VALUE=0.11.14
+ENV TERRAFORM_VERSION=${DEFAULT_VALUE}
 RUN apt-get update && apt-get install unzip && \
 curl -Os https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 curl -Os https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
